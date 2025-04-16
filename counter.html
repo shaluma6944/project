@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Character Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 80px;
+    }
+    textarea {
+      width: 300px;
+      height: 150px;
+      padding: 10px;
+      font-size: 16px;
+      resize: vertical;
+    }
+    #charCount {
+      margin-top: 10px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <textarea id="textArea" placeholder="Start typing..."></textarea>
+  <div id="charCount">Characters: 0</div>
+
+  <script>
+    const textArea = document.getElementById("textArea");
+    const charCount = document.getElementById("charCount");
+
+    textArea.addEventListener("input", function() {
+      const count = textArea.value.length;
+      charCount.textContent = `Characters: ${count}`;
+    });
+  </script>
+
+</body>
+</html>

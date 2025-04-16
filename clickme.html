@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Click Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 100px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    #countDisplay {
+      margin-top: 20px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <button id="clickButton">Click Me</button>
+  <div id="countDisplay">Button Clicked: 0 times</div>
+
+  <script>
+    let count = 0;
+    const button = document.getElementById("clickButton");
+    const display = document.getElementById("countDisplay");
+
+    button.addEventListener("click", function() {
+      count++;
+      display.textContent = `Button Clicked: ${count} time${count !== 1 ? 's' : ''}`;
+    });
+  </script>
+
+</body>
+</html>

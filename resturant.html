@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delicious Bites</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        nav a {
+            margin-right: 15px;
+        }
+        .menu-table th, .menu-table td {
+            padding: 10px;
+            border: 1px solid #ddd;
+        }
+        .menu-table tr:hover {
+            background-color: #f8f9fa;
+        }
+        .specials li {
+            margin-bottom: 5px;
+        }
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .btn:hover {
+            opacity: 0.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
+        <a class="navbar-brand" href="#">Delicious Bites</a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="#menu">Menu</a></li>
+                <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                <li class="nav-item"><a class="nav-link" href="#contact">Contact Us</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="container my-5 text-center">
+        <h1>Welcome to Delicious Bites</h1>
+        <p>Your favorite spot for delightful meals and cozy vibes.</p>
+    </section>
+
+    <!-- Menu Section -->
+    <section id="menu" class="container my-5">
+        <h2>Menu</h2>
+        <table class="table table-bordered menu-table">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Grilled Salmon <span class="badge bg-success">Special</span></td>
+                    <td>Fresh Atlantic salmon grilled to perfection.</td>
+                    <td>$18.99</td>
+                </tr>
+                <tr>
+                    <td>Truffle Pasta <span class="badge bg-warning text-dark">New</span></td>
+                    <td>Creamy pasta infused with black truffle.</td>
+                    <td>$15.99</td>
+                </tr>
+                <tr>
+                    <td>Classic Cheeseburger</td>
+                    <td>Juicy beef patty with cheese, lettuce, and tomato.</td>
+                    <td>$10.99</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h4>Chef's Recommendations</h4>
+        <ul class="specials">
+            <li>Try our house-made Tiramisu for dessert!</li>
+            <li>Don't miss the Spicy Thai Noodles on Wednesdays.</li>
+            <li>Our lemon-basil lemonade is a summer favorite.</li>
+        </ul>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="container my-5">
+        <h2>Gallery</h2>
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Dish 1">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Dish 2">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://via.placeholder.com/800x400" class="d-block w-100" alt="Ambiance">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Video Section -->
+    <section class="container my-5 text-center">
+        <h2>Take a Tour</h2>
+        <video width="80%" controls>
+            <source src="sample-video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="container my-5">
+        <h2>Contact Us / Reservations</h2>
+        <form class="row g-3">
+            <div class="col-md-6">
+                <label for="name" class="form-label">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Your name">
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="you@example.com">
+            </div>
+            <div class="col-md-6">
+                <label for="date" class="form-label">Reservation Date</label>
+                <input type="date" class="form-control" id="date">
+            </div>
+            <div class="col-md-6">
+                <label for="time" class="form-label">Time</label>
+                <input type="time" class="form-control" id="time">
+            </div>
+            <div class="col-12">
+                <label for="message" class="form-label">Message</label>
+                <textarea class="form-control" id="message" rows="4" placeholder="Any special requests?"></textarea>
+            </div>
+            <div class="col-12">
+                <button type="submit" class="btn btn-primary">Submit Reservation</button>
+            </div>
+        </form>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

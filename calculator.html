@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simple Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 60px;
+    }
+    input {
+      padding: 10px;
+      font-size: 18px;
+      margin: 10px;
+      width: 200px;
+      text-align: center;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 20px;
+      margin: 5px;
+      cursor: pointer;
+      width: 50px;
+    }
+    .result {
+      margin-top: 20px;
+      font-size: 24px;
+      font-weight: bold;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Simple Calculator</h2>
+  
+  <input type="number" id="num1" placeholder="Enter first number">
+  <input type="number" id="num2" placeholder="Enter second number">
+  
+  <div>
+    <button id="addBtn">+</button>
+    <button id="subBtn">−</button>
+    <button id="mulBtn">×</button>
+    <button id="divBtn">÷</button>
+  </div>
+  
+  <div class="result" id="result">Result: </div>
+  <div class="error" id="error"></div>
+
+  <script>
+    const num1Input = document.getElementById("num1");
+    const num2Input = document.getElementById("num2");
+    const resultDiv = document.getElementById("result");
+    const errorDiv = document.getElementById("error");
+
+    // Clear any previous error message
+    function clearError() {
+      errorDiv.textContent = '';
+    }
+
+    // Clear the result
+    function clearResult() {
+      resultDiv.textContent = 'Result: ';
+    }
+
+    // Handle calculation
+    function calculate(operator) {
+      const num1 = parseFloat(num1Input.value);
+      const num2 = parseFloat(num2Input.value);
+      
+      clearError();
+      clearResult();
+
+      if (isNaN(num1) || isNaN(num2)) {
+        errorDiv.textContent = 'Please enter valid numbers.';
+        return;
+      }
+
+      let result;
+      if (operator === 'add') {
+        result = num1 + num2;
+      } else if (operator === 'subtract') {
+        result = num1 - num2;
+      } else if (operator === 'multiply') {
+        result = num1 * num2;
+      } else if (operator === 'divide') {
+        if (num2 === 0) {
+          errorDiv.textContent = 'Cannot divide by zero.';
+          return;
+        }
+        result = num1 / num2;
+      }
+
+      resultDiv.textContent = `Result: ${result}`;
+    }
+
+    // Button event listeners
+    document.getElementById("addBtn").addEventListener("click", function() {
+      calculate('add');
+    });
+
+    document.getElementById("subBtn").addEventListener("click", function() {
+      calculate('subtract');
+    });
+
+    document.getElementById("mulBtn").addEventListener("click", function() {
+      calculate('multiply');
+    });
+
+    document.getElementById("divBtn").addEventListener("click", function() {
+      calculate('divide');
+    });
+  </script>
+
+</body>
+</html>

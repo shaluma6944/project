@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Slider</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding-top: 60px;
+    }
+    img {
+      width: 400px;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+    .controls {
+      margin-top: 20px;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 0 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <img id="sliderImage" src="" alt="Slider Image">
+  <div class="controls">
+    <button id="prevBtn">Previous</button>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <script>
+    const images = [
+      'https://picsum.photos/id/1018/600/400',
+      'https://picsum.photos/id/1015/600/400',
+      'https://picsum.photos/id/1016/600/400',
+      'https://picsum.photos/id/1021/600/400'
+    ];
+
+    let currentIndex = 0;
+    const imageElement = document.getElementById("sliderImage");
+
+    function showImage(index) {
+      imageElement.src = images[index];
+    }
+
+    document.getElementById("prevBtn").addEventListener("click", function() {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      showImage(currentIndex);
+    });
+
+    document.getElementById("nextBtn").addEventListener("click", function() {
+      currentIndex = (currentIndex + 1) % images.length;
+      showImage(currentIndex);
+    });
+
+    // Show the first image on load
+    showImage(currentIndex);
+  </script>
+
+</body>
+</html>
